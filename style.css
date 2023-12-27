@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --time: 5s;
+  }
+body{
+    background-color: black;
+}
+.sun{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 5vw;
+    width: 5vw;
+    background: linear-gradient(rgb(218, 218, 0), rgb(255, 166, 0));
+    border-radius: 50%;
+}
+.orbit{
+    background-color: rgba(87, 87, 87, 0);
+    border: 1px solid rgba(120, 120, 120, 0.57);
+    border-radius: 50%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+#o1{
+    height: 10vw;
+    width: 10vw;
+}
+#o2{
+    height: 22vw;
+    width: 22vw;
+}
+#o3{
+    height: 34vw;
+    width: 34vw;
+}
+#o4{
+    height: 46vw;
+    width: 46vw;
+}
+#o5{
+    height: 58vw;
+    width: 58vw;
+}
+#o6{
+    height: 70vw;
+    width: 70vw;
+}
+#o7{
+    height: 82vw;
+    width: 82vw;
+}
+#o8{
+    height: 94vw;
+    width: 94vw;
+}
+.p{
+    animation-name: revolve;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    background-color: rgba(87, 87, 87, 0);
+    border: none;
+    /*border-radius: 50%;*/
+    position:absolute;
+    top:50%;
+    left: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+.planet{
+    height: 6px;
+    width: 6px;
+    margin-top: -4px;
+    border-radius: 50%;
+    position: absolute;
+}
+#mercury{
+    background-color: rgb(165, 75, 42);
+}
+#venus{
+    background-color: rgb(222, 163, 0);
+}
+#earth{
+    background:linear-gradient(green,blue)
+}
+#mars{
+    background-color: rgb(165, 48, 42);
+}
+#jupiter{
+    background-color: rgb(201, 122, 73);
+}
+#saturn{
+    background-color: rgb(255, 219, 121);
+}
+#uranus{
+    background-color: rgb(146, 255, 248);
+}
+#neptune{
+    background-color: rgb(0, 91, 238);
+}
+#p1{
+    height: 10vw;
+    width: 10vw;
+    margin-left:-5vw;
+    margin-top: -5vw;
+    animation-duration: calc(0.241*var(--time));
+}
+#p2{
+    height: 22vw;
+    width: 22vw;
+    margin-left:-11vw;
+    margin-top: -11vw;
+    animation-duration: calc(0.615*var(--time));
+}
+#p3{
+    height: 34vw;
+    width: 34vw;
+    margin-left:-17vw;
+    margin-top: -17vw;
+    animation-duration: var(--time);
+}
+#p4{
+    height: 46vw;
+    width: 46vw;
+    margin-left:-23vw;
+    margin-top: -23vw;
+    animation-duration: calc(1.88*var(--time));
+}
+#p5{
+    height: 58vw;
+    width: 58vw;
+    margin-left:-29vw;
+    margin-top: -29vw;
+    animation-duration: calc(11.9*var(--time));
+}
+#p6{
+    height: 70vw;
+    width: 70vw;
+    margin-left:-35vw;
+    margin-top: -35vw;
+    animation-duration: calc(29.4*var(--time));
+}
+#p7{
+    height: 82vw;
+    width: 82vw;
+    margin-left:-41vw;
+    margin-top: -41vw;
+    animation-duration: calc(83.7*var(--time));
+}
+#p8{
+    height: 94vw;
+    width: 94vw;
+    margin-left:-47vw;
+    margin-top: -47vw;
+    animation-duration: calc(163.7*var(--time));
+}
+@keyframes revolve{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
