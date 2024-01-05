@@ -1,71 +1,149 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
 :root {
     --time: 5s;
-  }
-body{
-    background-color: rgba(0, 0, 0, 0.9);
-    color:rgba(255, 255, 255, 0.9);
 }
-.title{
+
+body {
     font-family: monospace;
-    text-align: center;
-    margin-top: 10vh;
+    font-size: 0.7rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.9);
 }
-.sun{
+
+.title {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    text-align: center;
+    padding: 2vh;
+    font-size: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.445);
+    z-index: 100;
+}
+
+.controls {
+    line-height: 1.5rem;
+    position: fixed;
+    bottom: 2vh;
+    left: 3vw;
+    z-index: 100;
+}
+
+.number {
+    font-family: monospace;
+    font-size: 0.7rem;
+    background-color: #00000000;
+    width: 40px;
+    border-width: 1px;
+    color: white;
+}
+input[type="radio"] {
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #0000007e;
+    height: 1rem;
+    width: 40px;
+}
+input[type="radio"]:checked{
+    background: #7e7e7e7e;
+}
+.view {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: white;
+    display: inline;
+    margin-left: -31px;
+}
+
+input[type="range"] {
+    cursor: pointer;
+    width: 94vw;
+}
+
+::-webkit-slider-runnable-track {
+    background-color: rgb(71, 71, 71);
+    height: 1px;
+}
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border-radius: 3px;
+    border-radius: 0;
+    margin-top: -6px;
+    height: 10px;
+    width: 1px;
+}
+
+#container{
+    transition-duration: 1s;
+}
+
+.sun {
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     transform: translateX(-50%) translateY(-50%);
     height: 5vw;
     width: 5vw;
     background: linear-gradient(rgb(218, 218, 0), rgb(255, 166, 0));
     border-radius: 50%;
 }
-.orbit{
+
+.orbit {
     background-color: rgba(87, 87, 87, 0);
     border: 1px solid rgba(120, 120, 120, 0.57);
     border-radius: 50%;
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
-#o1{
+
+#o1 {
     height: 10vw;
     width: 10vw;
 }
-#o2{
+
+#o2 {
     height: 22vw;
     width: 22vw;
 }
-#o3{
+
+#o3 {
     height: 34vw;
     width: 34vw;
 }
-#o4{
+
+#o4 {
     height: 46vw;
     width: 46vw;
 }
-#o5{
+
+#o5 {
     height: 58vw;
     width: 58vw;
 }
-#o6{
+
+#o6 {
     height: 70vw;
     width: 70vw;
 }
-#o7{
+
+#o7 {
     height: 82vw;
     width: 82vw;
 }
-#o8{
+
+#o8 {
     height: 94vw;
     width: 94vw;
 }
-.p{
+
+.p {
     animation-name: revolve;
     animation-duration: 10s;
     animation-iteration-count: infinite;
@@ -73,105 +151,138 @@ body{
     background-color: rgba(87, 87, 87, 0);
     border: none;
     /*border-radius: 50%;*/
-    position:absolute;
-    top:50%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     position: absolute;
     display: flex;
     justify-content: center;
 }
-.planet{
+
+.planet {
     height: 1.5vw;
     width: 1.5vw;
     margin-top: -0.7vw;
     border-radius: 50%;
     position: absolute;
 }
-#mercury{
+
+#mercury {
     background-color: rgb(165, 75, 42);
 }
-#venus{
+
+#venus {
     background-color: rgb(222, 163, 0);
 }
-#earth{
-    background:linear-gradient(green,blue)
+
+#earth {
+    background: linear-gradient(green, blue)
 }
-#mars{
+
+#mars {
     background-color: rgb(165, 48, 42);
 }
-#jupiter{
+
+#jupiter {
     background-color: rgb(201, 122, 73);
 }
-#saturn{
+
+#saturn {
     background-color: rgb(255, 219, 121);
 }
-#uranus{
+
+#uranus {
     background-color: rgb(146, 255, 248);
 }
-#neptune{
+
+#neptune {
     background-color: rgb(0, 91, 238);
 }
-#p1{
+
+#p1 {
     height: 10vw;
     width: 10vw;
-    margin-left:-5vw;
+    margin-left: -5vw;
     margin-top: -5vw;
     animation-duration: calc(0.241*var(--time));
 }
-#p2{
+
+#p2 {
     height: 22vw;
     width: 22vw;
-    margin-left:-11vw;
+    margin-left: -11vw;
     margin-top: -11vw;
     animation-duration: calc(0.615*var(--time));
 }
-#p3{
+
+#p3 {
     height: 34vw;
     width: 34vw;
-    margin-left:-17vw;
+    margin-left: -17vw;
     margin-top: -17vw;
     animation-duration: var(--time);
 }
-#p4{
+
+#p4 {
     height: 46vw;
     width: 46vw;
-    margin-left:-23vw;
+    margin-left: -23vw;
     margin-top: -23vw;
     animation-duration: calc(1.88*var(--time));
 }
-#p5{
+
+#p5 {
     height: 58vw;
     width: 58vw;
-    margin-left:-29vw;
+    margin-left: -29vw;
     margin-top: -29vw;
     animation-duration: calc(11.9*var(--time));
 }
-#p6{
+
+#p6 {
     height: 70vw;
     width: 70vw;
-    margin-left:-35vw;
+    margin-left: -35vw;
     margin-top: -35vw;
     animation-duration: calc(29.4*var(--time));
 }
-#p7{
+
+#p7 {
     height: 82vw;
     width: 82vw;
-    margin-left:-41vw;
+    margin-left: -41vw;
     margin-top: -41vw;
     animation-duration: calc(83.7*var(--time));
 }
-#p8{
+
+#p8 {
     height: 94vw;
     width: 94vw;
-    margin-left:-47vw;
+    margin-left: -47vw;
     margin-top: -47vw;
     animation-duration: calc(163.7*var(--time));
 }
-@keyframes revolve{
-    0%{
+
+@keyframes revolve {
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
+    }
+}
+
+@media (min-width:520px) {
+    .container {
+        transform: scale(0.7);
+        margin-top: 50vh;
+    }
+}
+
+@media (min-width:900px) {
+    .container {
+        transform: scale(0.5);
+        margin-top: 50vh;
     }
 }
