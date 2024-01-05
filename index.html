@@ -10,7 +10,7 @@
 
 <body>
     <p class="title">The Solar System</p>
-    <div class="container">
+    <div class="container" id="container">
         <div class="sun"></div>
         <div class="orbit" id="o1"></div>
         <div class="orbit" id="o2"></div>
@@ -29,6 +29,13 @@
         <div class="p" id="p7"><a href="#uranus" class="planet" id="uranus"></a></div>
         <div class="p" id="p8"><a href="#neptune" class="planet" id="neptune"></a></div>
     </div>
+    <div class="controls">
+        <u>Controls</u><br>
+        <div class="views">Perspective: &nbsp;<input type="radio" name="view" id="top"><div class="view">Top</div></input>&nbsp;&nbsp;<input type="radio" name="view" id="skew" onclick="skew()"><div class="view">Side</div></input></div>
+        1 Year = <code id="revtime">5 sec</code>
+        <input type="range" name="Time" class="time">
+    </div>
 </body>
+<script src="index.js"></script>
 
 </html>
